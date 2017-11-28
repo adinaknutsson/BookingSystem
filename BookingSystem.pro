@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    hairdresser.cpp
+    hairdresser.cpp \
+    hairdresserregister.cpp
 
 HEADERS += \
         mainwindow.h \
-    hairdresser.h
+    hairdresser.h \
+    hairdresserregister.h
 
 FORMS += \
         mainwindow.ui
