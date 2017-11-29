@@ -5,13 +5,12 @@
 class hairdresserRegister
 {
 public:
-    hairdresserRegister()
+    hairdresserRegister();
     bool addHairdresser(int hairdresserID, QString nameOfHairdresser);
 private:
    Hairdresser* hairdressers[7];
    int counter;
-   //Ska ju inte lägga till några frisöer,
-   //Kan vara statisk?
+   int capacity =7;
 
 };
 

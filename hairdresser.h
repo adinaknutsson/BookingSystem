@@ -4,9 +4,12 @@
 class Hairdresser
 {
 public:
+    Hairdresser();
     Hairdresser(int hairdresserID, QString hairdresserName);
     ~Hairdresser();
+
     QString getName();
+    bool operator==(Hairdresser other);
 
 private:
     int ID;
