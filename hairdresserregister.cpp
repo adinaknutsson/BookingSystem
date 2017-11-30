@@ -4,7 +4,7 @@ hairdresserRegister::hairdresserRegister()
 {
     counter =0;
 }
-bool hairdresserRegister::addHairdresser(int hairdresserID, QString nameOfHairdresser)
+bool hairdresserRegister::addHairdresser(int hairdresserID, std::string nameOfHairdresser)
 {
 bool add = false;
 if (counter == capacity)

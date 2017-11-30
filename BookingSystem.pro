@@ -29,14 +29,20 @@ SOURCES += \
     hairdresser.cpp \
     hairdresserregister.cpp \
     customers.cpp \
-    customerregister.cpp
+    customerregister.cpp \
+    treatment.cpp \
+    haircut.cpp \
+    colortreatment.cpp
 
 HEADERS += \
         mainwindow.h \
     hairdresser.h \
     hairdresserregister.h \
     customers.h \
-    customerregister.h
+    customerregister.h \
+    treatment.h \
+    haircut.h \
+    colortreatment.h
 
 FORMS += \
         mainwindow.ui

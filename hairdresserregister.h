@@ -6,7 +6,7 @@ class hairdresserRegister
 {
 public:
     hairdresserRegister();
-    bool addHairdresser(int hairdresserID, QString nameOfHairdresser);
+    bool addHairdresser(int hairdresserID, std::string nameOfHairdresser);
 private:
    Hairdresser* hairdressers[7];
    int counter;

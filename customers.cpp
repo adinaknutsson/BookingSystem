@@ -5,7 +5,7 @@ Customers::Customers()
 
 }
 
-Customers::Customers(int personNr, QString name, QString email, QString address, QString password)
+Customers::Customers(int personNr, std::string name, std::string email, std::string address, std::string password)
 {
     this->personNr = personNr;
     this->name = name;
@@ -19,40 +19,40 @@ Customers::~Customers()
     //Empty
 }
 
-QString Customers::ToString() const
+std::string Customers::ToString() const
 {
-    QString ret;
-    QString intConverter;
+    std::string ret;
+    //std::string intConverter;
 
     ret += "Namn: " + name + "\n";
-    ret += "Personnummer: " + intConverter.setNum(personNr) + "\n";
+    ret += "Personnummer: " +std::to_string(personNr) + "\n";
     ret += "Email: " + email + "\n";
     ret += "Adress: " + address + "\n";
     //Behövs lösenordet??
     return ret;
 }
 
-void Customers::setName(QString newName)
+void Customers::setName(std::string newName)
 {
     name = newName;
 }
 
-void Customers::setEmail(QString NewEmail)
+void Customers::setEmail(std::string NewEmail)
 {
     email = NewEmail;
 }
 
-void Customers::setAddress(QString NewAddress)
+void Customers::setAddress(std::string NewAddress)
 {
     address = NewAddress;
 }
 
-void Customers::setPassword(QString NewPassword)
+void Customers::setPassword(std::string NewPassword)
 {
     password = NewPassword;
 }
 
-QString Customers::getName() const
+std::string Customers::getName() const
 {
     return name;
 }

@@ -4,7 +4,7 @@ Hairdresser::Hairdresser()
 {
 
 }
-Hairdresser::Hairdresser(int hairdresserID, QString hairdresserName)
+Hairdresser::Hairdresser(int hairdresserID, std::string hairdresserName)
 {
     this->name = hairdresserName;
     this->ID = hairdresserID;
@@ -14,7 +14,7 @@ Hairdresser::~Hairdresser()
     //Empty
 }
 
-QString Hairdresser::getName()
+std::string Hairdresser::getName()
 {
     return name;
 }

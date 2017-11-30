@@ -1,19 +1,19 @@
 #ifndef HAIRDRESSER_H
 #define HAIRDRESSER_H
-#include <QString>
+#include <string>
 class Hairdresser
 {
 public:
     Hairdresser();
-    Hairdresser(int hairdresserID, QString hairdresserName);
+    Hairdresser(int hairdresserID, std::string hairdresserName);
     ~Hairdresser();
 
-    QString getName();
+    std::string getName();
     bool operator==(Hairdresser other);
 
 private:
     int ID;
-    QString name;
+    std::string name;
 };
 
 #endif // HAIRDRESSER_H

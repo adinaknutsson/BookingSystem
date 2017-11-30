@@ -1,29 +1,29 @@
 #ifndef CUSTOMERS_H
 #define CUSTOMERS_H
-#include <QString>
+#include <string>
 
 
 class Customers
 {
 public:
     Customers();
-    Customers(int personNr, QString name, QString email, QString address, QString password);
+    Customers(int personNr, std::string name, std::string email, std::string address, std::string password);
     ~Customers();
-    QString ToString() const;
-    void setName(QString NewName);
-    void setEmail(QString NewEmail);
-    void setAddress(QString NewAddress);
-    void setPassword(QString NewPassword);
+    std::string ToString() const;
+    void setName(std::string NewName);
+    void setEmail(std::string NewEmail);
+    void setAddress(std::string NewAddress);
+    void setPassword(std::string NewPassword);
 
-    QString getName() const;
+    std::string getName() const;
     int getPersonNr() const;
     //Fler getters efter behov...
 private:
     int personNr;
-    QString name;
-    QString email;
-    QString address;
-    QString password;
+    std::string name;
+    std::string email;
+    std::string address;
+    std::string password;
 };
 
 #endif // CUSTOMERS_H

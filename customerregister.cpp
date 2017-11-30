@@ -16,7 +16,7 @@ CustomerRegister::~CustomerRegister()
   delete[] CustomersArray;
 }
 
-bool CustomerRegister::addCustomer(int personNr, QString name, QString email, QString address, QString password)
+bool CustomerRegister::addCustomer(int personNr, std::string name, std::string email, std::string address, std::string password)
 {
     bool added = false;
     int index;
@@ -28,7 +28,7 @@ bool CustomerRegister::addCustomer(int personNr, QString name, QString email, QS
     if (index == -1)
     {
         Customers toAdd(personNr, name, email, address, password);
-        CustomersArray[counter] = &toAdd;
+        CustomersArray[counter] =  new Customers(toAdd);
         counter++;
         added = true;
     }
@@ -49,12 +49,12 @@ int CustomerRegister::findCustomer(int personNr)
     return index;
 }
 
-QString CustomerRegister::ToString() const
+std::string CustomerRegister::ToString(int personNr)
 {
-    QString ret ="";
+    //Inloggade persons personnummer ska kunna hämtas och sedan
+    //skickas vidare
+    std::string ret ="";
     int index;
-    //SKA INTE VARA COUNTER DÄR!!
-    //Får kolla vem som är inloggad och leta upp index.
     index = findCustomer(personNr);
     if (index !=-1)
     {

@@ -7,10 +7,10 @@ class CustomerRegister
 public:
     CustomerRegister();
     ~CustomerRegister();
-    bool addCustomer(int personNr, QString name, QString email, QString address, QString password);
+    bool addCustomer(int personNr, std::string name, std::string email, std::string address, std::string password);
     int findCustomer(int personNr);
-    //Kanske göra en sökfunktion??
-    QString ToString() const;
+
+    std::string ToString(int personNr);
 private:
     Customers** CustomersArray;
     int counter;
