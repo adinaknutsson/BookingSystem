@@ -15,6 +15,6 @@ Haircut::~Haircut()
 std::string Haircut::ToStringSpecific() const
 {
     std::string retString="";
-    retString += "Typ av klippning: " + typeOfHaircutName + "\n";
+    retString += "Typ av klippning: " + typeOfHaircutName;
     return retString;
 }

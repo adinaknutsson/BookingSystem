@@ -18,7 +18,7 @@ std::string Treatment::ToString()
     std::string retString = "";
     //QString intConverter;
     retString += ToStringSpecific() + "\n";
-    retString += "Pris: " + std::to_string(price) + "\n";
-    retString += "Tidåtgång: " + std::to_string(timeOfTreatment) + "\n";
+    retString += "Pris: " + std::to_string(price) + " kr\n";
+    retString += "Tidåtgång: " + std::to_string(timeOfTreatment) + " min\n";
     return retString;
 }

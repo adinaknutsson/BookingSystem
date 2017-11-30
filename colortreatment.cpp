@@ -15,6 +15,6 @@ ColorTreatment::~ColorTreatment()
 std::string ColorTreatment::ToStringSpecific() const
 {
     std::string retString="";
-    retString += "Färg: " + color + "\n";
+    retString += "Färg: " + color;
     return retString;
 }
