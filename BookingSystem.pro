@@ -32,7 +32,9 @@ SOURCES += \
     customerregister.cpp \
     treatment.cpp \
     haircut.cpp \
-    colortreatment.cpp
+    colortreatment.cpp \
+    booking.cpp \
+    bookingregister.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +44,9 @@ HEADERS += \
     customerregister.h \
     treatment.h \
     haircut.h \
-    colortreatment.h
+    colortreatment.h \
+    booking.h \
+    bookingregister.h
 
 FORMS += \
         mainwindow.ui

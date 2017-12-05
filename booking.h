@@ -1,0 +1,31 @@
+#ifndef BOOKING_H
+#define BOOKING_H
+#include <string>
+
+class Booking
+{
+public:
+    Booking();
+    Booking(int hairdresserID, int treatmentID, int dateOfTreatment, int time, int personNr);
+    ~Booking();
+    void setHairdresserID(int newID);
+    void setTreatmentID(int newID);
+    void setDate(int newDate);
+    void setTime(int newTime);
+
+    int getHairdresserID();
+    int getDate();
+    int getTime();
+    int getPersonNr();
+
+    std::string ToString();
+
+private:
+    int hairdresserID;
+    int treatmentID;
+    int date;
+    int time;
+    int personNr;
+};
+
+#endif // BOOKING_H

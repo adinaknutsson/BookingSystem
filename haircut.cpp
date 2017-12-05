@@ -18,3 +18,9 @@ std::string Haircut::ToStringSpecific() const
     retString += "Typ av klippning: " + typeOfHaircutName;
     return retString;
 }
+/*
+enum class cut
+{
+    longHair, shortHair, menCut
+}
+*/

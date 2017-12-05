@@ -18,3 +18,9 @@ std::string ColorTreatment::ToStringSpecific() const
     retString += "Färg: " + color;
     return retString;
 }
+/*
+enum class coloring
+{
+    hairstrands, full
+}
+*/
