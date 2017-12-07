@@ -64,6 +64,17 @@ std::string CustomerRegister::ToString(int personNr)
     return ret;
 }
 
+std::string CustomerRegister::getName(int personNr)
+{
+    int index = findCustomer(personNr);
+    std::string ret;
+    if (index !=-1)
+    {
+        ret += "Namn: " + CustomersArray[index]->getName() + "\n";
+    }
+    return ret;
+}
+
 void CustomerRegister::Expand()
 {
     capacity = capacity *2;

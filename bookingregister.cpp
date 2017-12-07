@@ -28,7 +28,8 @@ bool bookingRegister::checkTime(int hairdresserID, int date, int time)
     bool bookedTime = false;
     for (int i =0; i < counter; i++)
     {
-        if (hairdresserID == bookings[i]->getHairdresserID() && date == bookings[i]->getDate() && time == bookings[i]->getTime())
+        if (hairdresserID == bookings[i]->getHairdresserID()
+                && date == bookings[i]->getDate() && time == bookings[i]->getTime())
         {
             bookedTime = true;
             i = counter;
@@ -39,15 +40,20 @@ bool bookingRegister::checkTime(int hairdresserID, int date, int time)
 
 std::string bookingRegister::toString(int personNr)
 {
-    int index = findBooking(personNr);
+    //Skriver ut alla bokningar för en person
     std::string ret;
-    if (index != -1)
+    for(int i=0; i < counter; i++)
     {
-       ret += bookings[index]->ToString();
+        if (bookings[i]->getPersonNr() == personNr)
+        {
+            ret += bookings[i]->ToString();
+        }
     }
     return ret;
 }
 
+
+/* Används ej!!
 int bookingRegister::findBooking(int personNr)
 {
     int index =-1;
@@ -61,7 +67,7 @@ int bookingRegister::findBooking(int personNr)
     }
     return index;
 }
-
+*/
 void bookingRegister::Expand()
 {
     capacity = capacity*2;

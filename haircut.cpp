@@ -1,9 +1,8 @@
 #include "haircut.h"
 
-Haircut::Haircut(int price, int timeOfTreatment, int treatmentID, std::string name, std::string typeOfHaircutName, int haircutType)
+Haircut::Haircut(int price, int timeOfTreatment, int treatmentID, std::string name, std::string typeOfHaircutName)
     : Treatment(price, timeOfTreatment, treatmentID, name)
 {
-    this->haircutType = haircutType;
     this->typeOfHaircutName= typeOfHaircutName;
 }
 
@@ -18,9 +17,4 @@ std::string Haircut::ToStringSpecific() const
     retString += "Typ av klippning: " + typeOfHaircutName;
     return retString;
 }
-/*
-enum class cut
-{
-    longHair, shortHair, menCut
-}
-*/
+

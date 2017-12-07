@@ -10,7 +10,9 @@ public:
     bool addBooking(int hairdresserID, int treatmentID, int date, int time, int personNr);
     bool checkTime(int hairdresserID, int date, int time);
     std::string toString(int personNr);
-    int findBooking(int personNr);
+    //int findBooking(int personNr);
+
+    //Get funktioner för allt?
 
 private:
     Booking** bookings;

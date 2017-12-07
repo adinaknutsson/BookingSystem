@@ -5,11 +5,10 @@
 class Haircut : public Treatment
 {
 public:
-    Haircut(int price, int timeOfTreatment, int treatmentID, std::string name, std::string typeOfHaircutName, int haircutType);
+    Haircut(int price, int timeOfTreatment, int treatmentID, std::string name, std::string typeOfHaircutName);
     ~Haircut();
 private:
     std::string typeOfHaircutName;
-    int haircutType;
     std::string ToStringSpecific() const override;
 
 };

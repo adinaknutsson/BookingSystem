@@ -34,7 +34,9 @@ SOURCES += \
     haircut.cpp \
     colortreatment.cpp \
     booking.cpp \
-    bookingregister.cpp
+    bookingregister.cpp \
+    login.cpp \
+    newuser.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,7 +48,11 @@ HEADERS += \
     haircut.h \
     colortreatment.h \
     booking.h \
-    bookingregister.h
+    bookingregister.h \
+    login.h \
+    newuser.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    login.ui \
+    newuser.ui

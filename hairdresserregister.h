@@ -8,9 +8,9 @@ public:
     hairdresserRegister();
     bool addHairdresser(int hairdresserID, std::string nameOfHairdresser);
 private:
-   Hairdresser* hairdressers[7];
+   Hairdresser* hairdressers[5];
    int counter;
-   int capacity =7;
+   int capacity =5;
 
 };
 

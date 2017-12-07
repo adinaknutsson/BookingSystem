@@ -11,6 +11,7 @@ public:
     int findCustomer(int personNr);
 
     std::string ToString(int personNr);
+    std::string getName(int personNr);
 private:
     Customers** CustomersArray;
     int counter;

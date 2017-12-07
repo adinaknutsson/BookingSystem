@@ -1,10 +1,9 @@
 #include "colortreatment.h"
 
-ColorTreatment::ColorTreatment(int price, int timeOfTreatment, int treatmentID, std::string name, std::string color, int colortreatmentID)
+ColorTreatment::ColorTreatment(int price, int timeOfTreatment, int treatmentID, std::string name, std::string color)
     : Treatment(price, timeOfTreatment, treatmentID, name)
 {
     this->color = color;
-    this->colorTreatmentID = colorTreatmentID;
 }
 
 ColorTreatment::~ColorTreatment()

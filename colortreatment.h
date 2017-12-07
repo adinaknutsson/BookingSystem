@@ -7,11 +7,10 @@
 class ColorTreatment : public Treatment
 {
 public:
-    ColorTreatment(int price, int timeOfTreatment, int treatmentID, std::string name, std::string color, int colortreatmentID);
+    ColorTreatment(int price, int timeOfTreatment, int treatmentID, std::string name, std::string color);
     ~ColorTreatment();
 private:
     std::string color;
-    int colorTreatmentID;
     std::string ToStringSpecific() const override;
 };
 
