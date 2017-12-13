@@ -6,6 +6,7 @@ class hairdresserRegister
 {
 public:
     hairdresserRegister();
+    ~hairdresserRegister();
     bool addHairdresser(int hairdresserID, std::string nameOfHairdresser);
 private:
    Hairdresser* hairdressers[5];

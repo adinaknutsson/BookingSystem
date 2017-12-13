@@ -7,6 +7,7 @@ class bookingRegister
 {
 public:
     bookingRegister();
+    ~bookingRegister();
     bool addBooking(int hairdresserID, int treatmentID, int date, int time, int personNr);
     bool checkTime(int hairdresserID, int date, int time);
     std::string toString(int personNr);

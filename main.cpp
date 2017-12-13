@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     CustomerRegister test;
     test.addCustomer(19950621, "Adina Knutsson", "adina@bokning.se", "Adinagatan", "losen");
 
+   // CustomerRegister customers;
 
     Haircut cutLong(400, 60, 01, "Klippning", "Långt hår");
     Haircut cutShort(300, 30, 02, "Klippning", "kort hår");
@@ -46,7 +47,8 @@ int main(int argc, char *argv[])
     QTextStream(stdout) << test1 << "\n" << test2 << "\n" << test4;
 
     l.show();
-    w.show();
+    w.hide();
+    //w.show();
 
     return a.exec();
 }

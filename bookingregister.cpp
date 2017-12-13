@@ -7,6 +7,15 @@ bookingRegister::bookingRegister()
     bookings = new Booking*[capacity];
 }
 
+bookingRegister::~bookingRegister()
+{
+    for(int i=0; i < counter; i++)
+    {
+        delete bookings[i];
+    }
+    delete[] bookings;
+}
+
 bool bookingRegister::addBooking(int hairdresserID, int treatmentID, int date, int time, int personNr)
 {
     bool add=false;

@@ -36,7 +36,8 @@ SOURCES += \
     booking.cpp \
     bookingregister.cpp \
     login.cpp \
-    newuser.cpp
+    newuser.cpp \
+    loginuser.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -50,9 +51,11 @@ HEADERS += \
     booking.h \
     bookingregister.h \
     login.h \
-    newuser.h
+    newuser.h \
+    loginuser.h
 
 FORMS += \
         mainwindow.ui \
     login.ui \
-    newuser.ui
+    newuser.ui \
+    loginuser.ui
