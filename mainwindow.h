@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 #include "customerregister.h"
+#include "login.h"
+#include "bookingregister.h"
+#include "booktime.h"
+#include "hairdresserregister.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,9 +26,17 @@ private slots:
 
     //void on_pushButton_2_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     CustomerRegister customers;
+    bookingRegister bookings;
+    hairdresserRegister hairdressers;
+
+    //Fönster
+    Login* loginWindow;
+    bookTime* bookWindow;
 };
 
 #endif // MAINWINDOW_H

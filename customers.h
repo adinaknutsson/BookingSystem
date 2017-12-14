@@ -17,6 +17,7 @@ public:
 
     std::string getName() const;
     int getPersonNr() const;
+    std::string getPassword() const;
     //Fler getters efter behov...
 private:
     int personNr;

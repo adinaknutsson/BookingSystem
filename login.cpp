@@ -2,8 +2,9 @@
 #include "ui_login.h"
 #include "newuser.h"
 #include "loginuser.h"
+#include "mainwindow.h"
 
-Login::Login(QWidget *parent) :
+Login::Login(CustomerRegister* customers, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Login)
 {
@@ -17,14 +18,14 @@ Login::~Login()
 
 void Login::on_addCustomer_clicked()
 {
-    newUser addUser;
+    newUser addUser(customers);
     addUser.setModal(true);
     addUser.exec();
 }
 
 void Login::on_login_clicked()
 {
-    loginUser login;
+    loginUser login(customers);
     login.setModal(true);
     login.exec();
 }

@@ -2,7 +2,11 @@
 
 Customers::Customers()
 {
-
+    personNr=0;
+    name="";
+    email="";
+    address ="";
+    password ="";
 }
 
 Customers::Customers(int personNr, std::string name, std::string email, std::string address, std::string password)
@@ -60,5 +64,10 @@ std::string Customers::getName() const
 int Customers::getPersonNr() const
 {
     return personNr;
+}
+
+std::string Customers::getPassword() const
+{
+    return password;
 }
 

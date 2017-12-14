@@ -38,12 +38,15 @@ bool CustomerRegister::addCustomer(int personNr, std::string name, std::string e
 int CustomerRegister::findCustomer(int personNr)
 {
     int index =-1;
-    for(int i =0; i < counter; i++)
+    if( counter !=0)
     {
-        if (personNr == CustomersArray[i]->getPersonNr())
+        for(int i =0; i < counter; i++)
         {
-           index = i;
-           i = counter;
+            if (personNr == CustomersArray[i]->getPersonNr())
+            {
+               index = i;
+               i = counter;
+            }
         }
     }
     return index;
@@ -73,6 +76,20 @@ std::string CustomerRegister::getName(int personNr)
         ret += "Namn: " + CustomersArray[index]->getName() + "\n";
     }
     return ret;
+}
+
+bool CustomerRegister::login(int personNr, std::string password)
+{
+    bool existingCustomer = false;
+    for (int i=0; i < counter; i++)
+    {
+        if(personNr == CustomersArray[i]->getPersonNr() && password == CustomersArray[i]->getPassword())
+        {
+            existingCustomer = true;
+            i= counter;
+        }
+    }
+    return existingCustomer;
 }
 
 void CustomerRegister::Expand()

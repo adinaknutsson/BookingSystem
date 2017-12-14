@@ -12,6 +12,7 @@ public:
 
     std::string ToString(int personNr);
     std::string getName(int personNr);
+    bool login(int personNr, std::string password);
 private:
     Customers** CustomersArray;
     int counter;

@@ -13,20 +13,20 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Login l;
     MainWindow w;
 
+    /*
     hairdresserRegister hairdressers;
     hairdressers.addHairdresser(01,"Anna Larsson");
     hairdressers.addHairdresser(02,"Lisa Svensson");
     hairdressers.addHairdresser(03,"Pernilla Johansson");
     hairdressers.addHairdresser(04, "Mia Karlsson");
     hairdressers.addHairdresser(05, "Karl Olsson");
+*/
+    //CustomerRegister test;
+    //test.addCustomer(19950621, "Adina Knutsson", "adina@bokning.se", "Adinagatan", "losen");
 
-    CustomerRegister test;
-    test.addCustomer(19950621, "Adina Knutsson", "adina@bokning.se", "Adinagatan", "losen");
 
-   // CustomerRegister customers;
 
     Haircut cutLong(400, 60, 01, "Klippning", "Långt hår");
     Haircut cutShort(300, 30, 02, "Klippning", "kort hår");
@@ -41,14 +41,14 @@ int main(int argc, char *argv[])
 
     //QString test3 = QString::fromStdString(test.ToString(19950621));
     QString test1 = QString::fromStdString(bookings.toString(19950621));
-    QString test2 = QString::fromStdString(test.getName(19950621));
+    //QString test2 = QString::fromStdString(test.getName(19950621));
     QString test4 = QString::fromStdString(shave.ToString());
 
-    QTextStream(stdout) << test1 << "\n" << test2 << "\n" << test4;
+    //QTextStream(stdout) << test1 << "\n" << test2 << "\n" << test4;
 
-    l.show();
-    w.hide();
-    //w.show();
+
+    //w.hide();
+    w.show();
 
     return a.exec();
 }
