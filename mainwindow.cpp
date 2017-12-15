@@ -37,8 +37,9 @@ void MainWindow::addCustomer(int personNr, std::string name, std::string email, 
     customers.addCustomer(personNr, name, email, address, password);
 }
 
-
-void MainWindow::on_addBooking_clicked()
+void MainWindow::on_bookTime_clicked()
 {
     bookWindow = new bookTime(&bookings, this);
+    bookWindow->show();
+    hide();
 }

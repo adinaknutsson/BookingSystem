@@ -2,7 +2,7 @@
 #define LOGINUSER_H
 
 #include <QDialog>
-#include "mainwindow.h"
+#include "customerregister.h"
 
 namespace Ui {
 class loginUser;

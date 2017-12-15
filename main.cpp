@@ -22,11 +22,8 @@ int main(int argc, char *argv[])
     hairdressers.addHairdresser(03,"Pernilla Johansson");
     hairdressers.addHairdresser(04, "Mia Karlsson");
     hairdressers.addHairdresser(05, "Karl Olsson");
-*/
     //CustomerRegister test;
     //test.addCustomer(19950621, "Adina Knutsson", "adina@bokning.se", "Adinagatan", "losen");
-
-
 
     Haircut cutLong(400, 60, 01, "Klippning", "Långt hår");
     Haircut cutShort(300, 30, 02, "Klippning", "kort hår");
@@ -46,7 +43,7 @@ int main(int argc, char *argv[])
 
     //QTextStream(stdout) << test1 << "\n" << test2 << "\n" << test4;
 
-
+*/
     //w.hide();
     w.show();
 

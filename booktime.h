@@ -2,7 +2,7 @@
 #define BOOKTIME_H
 
 #include <QDialog>
-#include "mainwindow.h"
+#include "bookingregister.h"
 
 namespace Ui {
 class bookTime;

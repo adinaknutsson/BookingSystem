@@ -2,11 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "customerregister.h"
 #include "login.h"
+#include "customerregister.h"
 #include "bookingregister.h"
 #include "booktime.h"
 #include "hairdresserregister.h"
+#include "haircut.h"
+#include "colortreatment.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -22,11 +25,7 @@ public:
     void addCustomer(int personNr, std::string name, std::string email, std::string address, std::string password);
 
 private slots:
-   // void on_pushButton_clicked();
-
-    //void on_pushButton_2_clicked();
-
-    void on_pushButton_clicked();
+    void on_bookTime_clicked();
 
 private:
     Ui::MainWindow *ui;
