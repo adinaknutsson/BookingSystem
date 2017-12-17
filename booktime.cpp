@@ -13,8 +13,6 @@ bookTime::bookTime(bookingRegister* bookings, hairdresserRegister* hairdressers,
         QString hairdresser = QString::fromStdString(temp);
         ui->comboBox->addItem(hairdresser);
     }
-ui->comboBox->addItem("Mark");
-
 }
 
 bookTime::~bookTime()

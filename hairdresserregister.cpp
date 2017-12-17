@@ -12,12 +12,17 @@ hairdresserRegister::~hairdresserRegister()
 bool hairdresserRegister::addHairdresser(int hairdresserID, std::string nameOfHairdresser)
 {
 bool add = false;
+Hairdresser *toAdd = new Hairdresser(hairdresserID, nameOfHairdresser);
+hairdressers[counter] = toAdd;
+counter++;
+/*
 if (counter == capacity)
 {
 }
 else
 {
    Hairdresser *toAdd = new Hairdresser(hairdresserID, nameOfHairdresser);
+
    if(counter == 0)
    {
        hairdressers[counter] = toAdd;
@@ -37,8 +42,10 @@ else
            add = true;
        }
    }
+
    }
 }
+*/
 return add;
 }
 
