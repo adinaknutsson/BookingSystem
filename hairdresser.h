@@ -9,7 +9,7 @@ public:
     ~Hairdresser();
 
     std::string getName();
-    bool operator==(Hairdresser other);
+    bool operator==(Hairdresser& other);
 
 private:
     int ID;

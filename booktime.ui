@@ -33,7 +33,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -51,38 +51,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="comboBox">
-      <item>
-       <property name="text">
-        <string>Lisa Svensson</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Pernilla Johansson</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Mia Karlsson</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Karl Olsson</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Anna Larsson</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-     </widget>
+     <widget class="QComboBox" name="comboBox"/>
     </item>
    </layout>
   </widget>

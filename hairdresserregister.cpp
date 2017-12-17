@@ -17,19 +17,39 @@ if (counter == capacity)
 }
 else
 {
-   Hairdresser toAdd(hairdresserID, nameOfHairdresser);
+   Hairdresser *toAdd = new Hairdresser(hairdresserID, nameOfHairdresser);
+   if(counter == 0)
+   {
+       hairdressers[counter] = toAdd;
+       counter++;
+       add = true;
+   }
+   else
+   {
    for (int i=0; i < counter; i++)
    {
-       if (toAdd == *hairdressers[i])
+       if (*toAdd == *hairdressers[i])
        {}
        else
        {
-           hairdressers[counter] = &toAdd;
+           hairdressers[counter] = toAdd;
            counter++;
+           add = true;
        }
+   }
    }
 }
 return add;
+}
+
+int hairdresserRegister::getNrOfHairdressers() const
+{
+    return counter;
+}
+
+std::string hairdresserRegister::getNameToComboBox(int index) const
+{
+    return hairdressers[index]->getName();
 }
 
 

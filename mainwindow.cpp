@@ -39,7 +39,7 @@ void MainWindow::addCustomer(int personNr, std::string name, std::string email, 
 
 void MainWindow::on_bookTime_clicked()
 {
-    bookWindow = new bookTime(&bookings, this);
+    bookWindow = new bookTime(&bookings, &hairdressers, this);
     bookWindow->show();
     hide();
 }

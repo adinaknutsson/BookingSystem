@@ -8,6 +8,9 @@ public:
     hairdresserRegister();
     ~hairdresserRegister();
     bool addHairdresser(int hairdresserID, std::string nameOfHairdresser);
+
+    int getNrOfHairdressers() const;
+    std::string getNameToComboBox(int index) const;
 private:
    Hairdresser* hairdressers[5];
    int counter;

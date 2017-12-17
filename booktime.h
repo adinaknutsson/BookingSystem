@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "bookingregister.h"
+#include "hairdresserregister.h"
 
 namespace Ui {
 class bookTime;
@@ -13,7 +14,7 @@ class bookTime : public QDialog
     Q_OBJECT
 
 public:
-    explicit bookTime(bookingRegister* bookings, QWidget *parent = 0);
+    explicit bookTime(bookingRegister* bookings, hairdresserRegister* hairdressers, QWidget *parent = 0);
     ~bookTime();
 
 private slots:
@@ -24,6 +25,7 @@ private slots:
 private:
     Ui::bookTime *ui;
     bookingRegister* bookings;
+    hairdresserRegister* hairdressers;
 };
 
 #endif // BOOKTIME_H

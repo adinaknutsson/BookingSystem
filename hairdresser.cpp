@@ -19,7 +19,7 @@ std::string Hairdresser::getName()
     return name;
 }
 
-bool Hairdresser::operator==(Hairdresser other)
+bool Hairdresser::operator==(Hairdresser &other)
 {
     bool same = false;
     if (this->name == other.name && this->ID == other.ID)
