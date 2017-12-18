@@ -9,6 +9,7 @@ newUser::newUser(CustomerRegister* customers, QWidget *parent) :
     ui(new Ui::newUser)
 {
     ui->setupUi(this);
+    this->customers = customers;
 }
 
 newUser::~newUser()

@@ -59,4 +59,9 @@ std::string hairdresserRegister::getNameToComboBox(int index) const
     return hairdressers[index]->getName();
 }
 
+int hairdresserRegister::gethairdresserID(int index)
+{
+    return hairdressers[index]->getID();
+}
+
 

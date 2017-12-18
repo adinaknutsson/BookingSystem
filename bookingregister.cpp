@@ -47,36 +47,78 @@ bool bookingRegister::checkTime(int hairdresserID, int date, int time)
     return bookedTime;
 }
 
-std::string bookingRegister::toString(int personNr)
+std::string bookingRegister::freeTimesToString(int date, int hairdresserID)
 {
-    //Skriver ut alla bokningar för en person
-    std::string ret;
-    for(int i=0; i < counter; i++)
+    std::string ret ="";
+    if (counter ==0)
     {
-        if (bookings[i]->getPersonNr() == personNr)
+        for (int i=900; i < 1800; i =i +100)
         {
-            ret += bookings[i]->ToString();
+                 ret = ret + std::to_string(i) + "\n";
+        }
+    }
+    else
+    {
+        int arr[9] ={};
+        for (int i=0; i < counter; i++)
+        {
+            for (int n=900; n < 1800; n =n +100)
+            {
+                int index = (n/100 ) -9;
+                if (arr[index] != -1)
+                {
+                    if (date == bookings[i]->getDate() && hairdresserID == bookings[i]->getHairdresserID() && n == bookings[i]->getTime())
+                    {
+                        arr[index] = -1;
+                    }
+                    else
+                    {
+                        arr[index]=n;
+                    }
+                }
+            }
+
+        }
+        for(int i=0; i < 9; i++)
+        {
+            if (arr[i] == -1)
+            {
+
+            }
+            else
+            {
+                ret = ret + std::to_string(arr[i]) + "\n";
+            }
         }
     }
     return ret;
 }
 
-
-/* Används ej!!
-int bookingRegister::findBooking(int personNr)
+std::string bookingRegister::toString(int index)
 {
-    int index =-1;
-    for (int i=0; i < counter; i++)
-    {
-        if (bookings[i]->getPersonNr() == personNr)
-        {
-            index = i;
-            i = counter;
-        }
-    }
-    return index;
+    return bookings[index]->ToString();
 }
-*/
+
+int bookingRegister::getCounter()
+{
+    return counter;
+}
+
+int bookingRegister::gethairdresserIDAtIndex(int index)
+{
+    return bookings[index]->getHairdresserID();
+}
+
+int bookingRegister::getTreatmentIDAtIndex(int index)
+{
+   return bookings[i]->getTreatmentID();
+}
+
+int bookingRegister::getPersonNr(int index)
+{
+    return bookings[index]->getPersonNr();
+}
+
 void bookingRegister::Expand()
 {
     capacity = capacity*2;

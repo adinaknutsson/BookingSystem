@@ -19,6 +19,11 @@ std::string Hairdresser::getName()
     return name;
 }
 
+int Hairdresser::getID()
+{
+    return ID;
+}
+
 bool Hairdresser::operator==(Hairdresser &other)
 {
     bool same = false;

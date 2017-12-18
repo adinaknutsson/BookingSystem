@@ -13,10 +13,11 @@ public:
     void setDate(int newDate);
     void setTime(int newTime);
 
-    int getHairdresserID();
-    int getDate();
-    int getTime();
-    int getPersonNr();
+    int getHairdresserID() const;
+    int getDate() const;
+    int getTime() const;
+    int getPersonNr() const;
+    int getTreatmentID() const;
 
     std::string ToString();
 

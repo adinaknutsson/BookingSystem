@@ -45,24 +45,29 @@ void Booking::setTime(int newTime)
     time = newTime;
 }
 
-int Booking::getHairdresserID()
+int Booking::getHairdresserID() const
 {
     return hairdresserID;
 }
 
-int Booking::getDate()
+int Booking::getDate() const
 {
     return date;
 }
 
-int Booking::getTime()
+int Booking::getTime() const
 {
     return time;
 }
 
-int Booking::getPersonNr()
+int Booking::getPersonNr() const
 {
     return personNr;
+}
+
+int Booking::getTreatmentID() const
+{
+    return treatmentID;
 }
 
 std::string Booking::ToString()

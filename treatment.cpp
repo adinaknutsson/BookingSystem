@@ -1,9 +1,9 @@
 #include "treatment.h"
 
-Treatment::Treatment(int price, int time, int ID, std::string name)
+Treatment::Treatment(int price, int ID, std::string name)
 {
     this->price = price;
-    timeOfTreatment = time;
+    //timeOfTreatment = time;
     treatmentID = ID;
     this->name = name;
 }
@@ -19,6 +19,6 @@ std::string Treatment::ToString()
     //QString intConverter;
     retString += ToStringSpecific() + "\n";
     retString += "Pris: " + std::to_string(price) + " kr\n";
-    retString += "Tidåtgång: " + std::to_string(timeOfTreatment) + " min\n";
+    //retString += "Tidåtgång: " + std::to_string(timeOfTreatment) + " min\n";
     return retString;
 }

@@ -8,6 +8,7 @@ Login::Login(CustomerRegister* customers, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Login)
 {
+    this->customers = customers;
     ui->setupUi(this);
 }
 

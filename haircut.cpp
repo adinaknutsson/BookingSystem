@@ -1,7 +1,7 @@
 #include "haircut.h"
 
-Haircut::Haircut(int price, int timeOfTreatment, int treatmentID, std::string name, std::string typeOfHaircutName)
-    : Treatment(price, timeOfTreatment, treatmentID, name)
+Haircut::Haircut(int price, int treatmentID, std::string name, std::string typeOfHaircutName)
+    : Treatment(price, treatmentID, name)
 {
     this->typeOfHaircutName= typeOfHaircutName;
 }

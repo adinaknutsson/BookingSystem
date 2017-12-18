@@ -10,10 +10,14 @@ public:
     ~bookingRegister();
     bool addBooking(int hairdresserID, int treatmentID, int date, int time, int personNr);
     bool checkTime(int hairdresserID, int date, int time);
-    std::string toString(int personNr);
-    //int findBooking(int personNr);
+    std::string freeTimesToString(int date, int hairdresserID);
+    std::string toString(int index);
 
     //Get funktioner för allt?
+    int getCounter();
+    int gethairdresserIDAtIndex(int index);
+    int getTreatmentIDAtIndex(int index);
+    int getPersonNr(int index);
 
 private:
     Booking** bookings;

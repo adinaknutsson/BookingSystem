@@ -11,6 +11,7 @@ public:
 
     int getNrOfHairdressers() const;
     std::string getNameToComboBox(int index) const;
+    int gethairdresserID(int index);
 private:
    Hairdresser* hairdressers[5];
    int counter;

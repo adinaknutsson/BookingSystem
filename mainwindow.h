@@ -23,15 +23,19 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void addCustomer(int personNr, std::string name, std::string email, std::string address, std::string password);
-
+    void setActiveCustomer(int personNr);
 private slots:
     void on_bookTime_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
     CustomerRegister customers;
     bookingRegister bookings;
     hairdresserRegister hairdressers;
+
+    int personNrActive;
 
     //Fönster
     Login* loginWindow;

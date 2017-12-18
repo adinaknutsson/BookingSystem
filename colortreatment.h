@@ -7,7 +7,7 @@
 class ColorTreatment : public Treatment
 {
 public:
-    ColorTreatment(int price, int timeOfTreatment, int treatmentID, std::string name, std::string color);
+    ColorTreatment(int price, int treatmentID, std::string name, std::string color);
     ~ColorTreatment();
 private:
     std::string color;
