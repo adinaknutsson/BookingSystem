@@ -15,6 +15,11 @@ public:
     bool login(int personNr, std::string password);
     void setActivUser(int personNr);
     int getActiveUser() const;
+
+    void setName(std::string newName);
+    void setEmail(std::string newEmail);
+    void setAddress(std::string newAddress);
+    void setPassword(std::string newPassword);
 private:
     Customers** CustomersArray;
     int counter;

@@ -96,3 +96,10 @@ void MainWindow::on_pushButton_2_clicked()
     QString bookingsString = QString::fromStdString(booking);
     QMessageBox::information(this, "Bokningar",bookingsString);
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    informationWindow = new changeInformation(&customers,personNrActive, this);
+    informationWindow->show();
+    hide();
+}

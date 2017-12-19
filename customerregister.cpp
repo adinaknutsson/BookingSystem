@@ -102,6 +102,42 @@ int CustomerRegister::getActiveUser() const
     return activUserPersonNr;
 }
 
+void CustomerRegister::setName(std::string newName)
+{
+    int index = findCustomer(activUserPersonNr);
+    if (index != -1)
+    {
+        CustomersArray[index]->setName(newName);
+    }
+}
+
+void CustomerRegister::setEmail(std::string newEmail)
+{
+    int index = findCustomer(activUserPersonNr);
+    if (index != -1)
+    {
+        CustomersArray[index]->setEmail(newEmail);
+    }
+}
+
+void CustomerRegister::setAddress(std::string newAddress)
+{
+    int index = findCustomer(activUserPersonNr);
+    if (index != -1)
+    {
+        CustomersArray[index]->setAddress(newAddress);
+    }
+}
+
+void CustomerRegister::setPassword(std::string newPassword)
+{
+    int index = findCustomer(activUserPersonNr);
+    if (index != -1)
+    {
+        CustomersArray[index]->setPassword(newPassword);
+    }
+}
+
 void CustomerRegister::Expand()
 {
     capacity = capacity *2;

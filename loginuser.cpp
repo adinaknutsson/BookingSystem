@@ -9,6 +9,8 @@ loginUser::loginUser(CustomerRegister* customers, QWidget *parent) :
 {
     ui->setupUi(this);
     this->customers = customers;
+    setWindowFlags(Qt::FramelessWindowHint);
+    setWindowFlags(Qt::WindowTitleHint);
 }
 
 loginUser::~loginUser()

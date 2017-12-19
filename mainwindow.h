@@ -9,6 +9,7 @@
 #include "hairdresserregister.h"
 #include "haircut.h"
 #include "colortreatment.h"
+#include "changeinformation.h"
 
 
 namespace Ui {
@@ -29,6 +30,8 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     Treatment** treatments;
@@ -43,6 +46,8 @@ private:
     //Fönster
     Login* loginWindow;
     bookTime* bookWindow;
+    changeInformation* informationWindow;
+
 };
 
 #endif // MAINWINDOW_H
