@@ -13,7 +13,7 @@ class Login : public QDialog
     Q_OBJECT
 
 public:
-    explicit Login(CustomerRegister* customers, QWidget *parent = 0);
+    explicit Login(CustomerRegister* customers, QWidget *parent =0);
     ~Login();
 
 private slots:

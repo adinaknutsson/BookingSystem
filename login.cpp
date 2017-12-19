@@ -29,4 +29,5 @@ void Login::on_login_clicked()
     loginUser login(customers);
     login.setModal(true);
     login.exec();
+    hide();
 }

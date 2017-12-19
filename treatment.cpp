@@ -22,3 +22,19 @@ std::string Treatment::ToString()
     //retString += "Tidåtgång: " + std::to_string(timeOfTreatment) + " min\n";
     return retString;
 }
+
+std::string Treatment::getName()
+{
+    return name;
+}
+
+int Treatment::getTreatmentID()
+{
+    return treatmentID;
+}
+
+int Treatment::getPrice()
+{
+    return price;
+}
+

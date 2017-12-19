@@ -1,19 +1,32 @@
 #include "booktime.h"
 #include "ui_booktime.h"
 #include "QMessageBox"
+#include "haircut.h"
+#include "colortreatment.h"
 
-bookTime::bookTime(bookingRegister* bookings, hairdresserRegister* hairdressers, QWidget *parent) :
+bookTime::bookTime(bookingRegister* bookings, hairdresserRegister* hairdressers, Treatment** treatments, int activUser,  QWidget *parent) :
     QDialog(parent),
     ui(new Ui::bookTime)
 {
     ui->setupUi(this);
     this->hairdressers = hairdressers;
     this->bookings = bookings;
+    this->treatments = treatments;
+    activ = activUser;
     for(int i=0; i <hairdressers->getNrOfHairdressers(); i++)
     {
         std::string temp = hairdressers->getNameToComboBox(i);
         QString hairdresser = QString::fromStdString(temp);
         ui->comboBox->addItem(hairdresser);
+    }
+    for(int i=0; i < 9; i++)
+    {
+        std::string nameTemp = treatments[i]->getName();
+        QString name = QString::fromStdString(nameTemp);
+        std::string type = treatments[i]->getTypeNameOfTreatment();
+        QString type1 = QString::fromStdString(type);
+
+        ui->comboBox_2->addItem(name + " , " + type1);
     }
 }
 
@@ -25,14 +38,15 @@ bookTime::~bookTime()
 void bookTime::on_pushButton_clicked()
 {
     QString hairdresser = ui->comboBox->currentText();
-    QMessageBox::information(this, "title", hairdresser);
     QString dateToBook = ui->date->text();
     int dateToBook1 = dateToBook.toInt();
     QString timeToBook = ui->time_2->text();
     int timeToBook1 = timeToBook.toInt();
     int hairdresserIndex = ui->comboBox->currentIndex();
-    bookings->addBooking(hairdresserIndex,01, dateToBook1, timeToBook1,1995);
-    //01 och 1995 ska ändras till riktiga värden!!
+    int treatmentIndex = ui->comboBox_2->currentIndex() +1;
+
+    bookings->addBooking(hairdresserIndex,treatmentIndex, dateToBook1, timeToBook1, activ);
+    //1995 ska ändras till riktiga värden!!
     hide();
     parentWidget()->show();
 

@@ -31,6 +31,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Treatment** treatments;
+    int counterTreatments;
+    int capacityTreatments =9;
     CustomerRegister customers;
     bookingRegister bookings;
     hairdresserRegister hairdressers;

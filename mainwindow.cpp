@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow), customers(), bookings(), hairdressers()
 {
     ui->setupUi(this);
-    personNrActive = 1995;
 
     hairdressers.addHairdresser(0,"Anna Larsson");
     hairdressers.addHairdresser(1,"Lisa Svensson");
@@ -17,16 +16,21 @@ MainWindow::MainWindow(QWidget *parent) :
     hairdressers.addHairdresser(3, "Mia Karlsson");
     hairdressers.addHairdresser(4, "Karl Olsson");
 
-    Haircut cutLong(400, 01, "Klippning", "Långt hår");
-    Haircut cutShort(300, 02, "Klippning", "kort hår");
-    Haircut shave(200, 03, "Rakning", "Rakning");
-    ColorTreatment coloringBlonde(1000, 04, "Färgning", "Ljust");
-    ColorTreatment coloringDark(1200, 05, "Slingor", "Mörkt");
-    //Ska inte lägga till färg här?
-    ColorTreatment strandsBrown(1200, 06, "Slingor", "Mörk");
-    ColorTreatment strandsBlonde(1200, 07, "Slingor", "Ljust");
-    //hide();
+    counterTreatments=0;
+    treatments = new Treatment*[capacityTreatments];
+    treatments[counterTreatments++] = new Haircut(400, 1, "Klippning", "Långt hår");
+    treatments[counterTreatments++] = new Haircut(300, 2, "Klippning", "kort hår");
+    treatments[counterTreatments++] = new Haircut(200, 3, "Rakning", "Rakning");
+    treatments[counterTreatments++] =new ColorTreatment(1000, 4, "Färgning", "Ljust");
+    treatments[counterTreatments++] = new ColorTreatment (1200, 5, "Färgning", "Mörkt");
+    treatments[counterTreatments++] =new ColorTreatment(1500, 6, "Slingor långt hår", "Mörkt");
+    treatments[counterTreatments++] = new ColorTreatment(1200, 7, "Slingor kort hår", "Mörkt");
+    treatments[counterTreatments++] = new ColorTreatment (1500, 8, "Slingor långt hår", "Ljust");
+    treatments[counterTreatments++] = new ColorTreatment (1200, 9, "Slingor kort hår", "Ljust");
+
+    this->hide();
     loginWindow = new Login(&customers, this);
+    loginWindow->setModal(true);
     loginWindow->show();
 
 }
@@ -38,6 +42,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::addCustomer(int personNr, std::string name, std::string email, std::string address, std::string password)
 {
+
     customers.addCustomer(personNr, name, email, address, password);
 }
 
@@ -48,7 +53,8 @@ void MainWindow::setActiveCustomer(int personNr)
 
 void MainWindow::on_bookTime_clicked()
 {
-    bookWindow = new bookTime(&bookings, &hairdressers, this);
+    personNrActive = customers.getActiveUser();
+    bookWindow = new bookTime(&bookings, &hairdressers, treatments, personNrActive, this);
     bookWindow->show();
     hide();
 }
@@ -56,21 +62,37 @@ void MainWindow::on_bookTime_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     int count = bookings.getCounter();
-    std::string booking;
+    std::string booking ="";
     for(int i=0; i < count; i++)
     {
         if(personNrActive ==bookings.getPersonNr(i));
         {
-            booking = bookings.toString(i);
-            //int treatmentID = bookings.getTreatmentIDAtIndex(i);
+            booking = booking + bookings.toString(i);
+            int treatmentID = bookings.getTreatmentIDAtIndex(i);
             int hairdresserID = bookings.gethairdresserIDAtIndex(i);
             for(int n=0; n < hairdressers.getNrOfHairdressers(); n++)
             {
                 if(hairdressers.gethairdresserID(n) == hairdresserID)
                 {
-                   std::string name = hairdressers.getNameToComboBox(n);
+                   std::string nameHairdresser= hairdressers.getNameToComboBox(n);
+                   n = hairdressers.getNrOfHairdressers();
+                   booking = booking+ "Frisör: " + nameHairdresser + "\n";
                 }
             }
+            for (int j=0; j < counterTreatments; j++)
+            {
+                if (treatments[j]->getTreatmentID() == treatmentID)
+                {
+                    std::string treatment = treatments[i]->getName();
+                    int price = treatments[i]->getPrice();
+                    booking =booking + "Behandling: " + treatment + "\n";
+                    booking =booking + "Pris: " + std::to_string(price) + "\n\n";
+                    j = counterTreatments;
+                }
+            }
+
         }
     }
+    QString bookingsString = QString::fromStdString(booking);
+    QMessageBox::information(this, "Bokningar",bookingsString);
 }

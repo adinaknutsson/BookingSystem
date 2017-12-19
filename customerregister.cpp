@@ -92,6 +92,16 @@ bool CustomerRegister::login(int personNr, std::string password)
     return existingCustomer;
 }
 
+void CustomerRegister::setActivUser(int personNr)
+{
+    activUserPersonNr = personNr;
+}
+
+int CustomerRegister::getActiveUser() const
+{
+    return activUserPersonNr;
+}
+
 void CustomerRegister::Expand()
 {
     capacity = capacity *2;

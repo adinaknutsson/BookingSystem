@@ -1,6 +1,6 @@
 #ifndef TREATMENT_H
 #define TREATMENT_H
-#include <QString>
+#include <string>
 
 class Treatment
 {
@@ -9,6 +9,10 @@ public:
     virtual ~Treatment();
 
     std::string ToString();
+    std::string getName();
+    int getTreatmentID();
+    int getPrice();
+    virtual std::string getTypeNameOfTreatment() const =0;
 
 private:
     int price;

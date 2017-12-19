@@ -11,6 +11,11 @@ ColorTreatment::~ColorTreatment()
     //Empty
 }
 
+std::string ColorTreatment::getTypeNameOfTreatment() const
+{
+    return color;
+}
+
 std::string ColorTreatment::ToStringSpecific() const
 {
     std::string retString="";

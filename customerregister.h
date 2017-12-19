@@ -13,10 +13,13 @@ public:
     std::string ToString(int personNr);
     std::string getName(int personNr);
     bool login(int personNr, std::string password);
+    void setActivUser(int personNr);
+    int getActiveUser() const;
 private:
     Customers** CustomersArray;
     int counter;
     int capacity;
+    int activUserPersonNr;
     void Expand();
 };
 

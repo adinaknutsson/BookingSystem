@@ -111,7 +111,7 @@ int bookingRegister::gethairdresserIDAtIndex(int index)
 
 int bookingRegister::getTreatmentIDAtIndex(int index)
 {
-   return bookings[i]->getTreatmentID();
+   return bookings[index]->getTreatmentID();
 }
 
 int bookingRegister::getPersonNr(int index)

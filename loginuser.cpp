@@ -1,7 +1,7 @@
 #include "loginuser.h"
 #include "ui_loginuser.h"
 #include <QMessageBox>
-//#include "mainwindow.h"
+#include "mainwindow.h"
 
 loginUser::loginUser(CustomerRegister* customers, QWidget *parent) :
     QDialog(parent),
@@ -26,8 +26,7 @@ void loginUser::on_login_clicked()
     if (customers->login(personNr2, password2) == true)
     {
         hide();
-        //parentWidget()->show();
-        //setActiveCustomer(personNr2);
+        customers->setActivUser(personNr2);
 
     }
     else

@@ -9,6 +9,7 @@ class ColorTreatment : public Treatment
 public:
     ColorTreatment(int price, int treatmentID, std::string name, std::string color);
     ~ColorTreatment();
+    std::string getTypeNameOfTreatment() const override;
 private:
     std::string color;
     std::string ToStringSpecific() const override;

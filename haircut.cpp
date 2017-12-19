@@ -18,3 +18,8 @@ std::string Haircut::ToStringSpecific() const
     return retString;
 }
 
+std::string Haircut::getTypeNameOfTreatment() const
+{
+    return typeOfHaircutName;
+}
+
