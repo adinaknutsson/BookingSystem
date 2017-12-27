@@ -24,6 +24,8 @@ private slots:
 
     void on_time_clicked();
 
+    void on_end_clicked();
+
 private:
     Ui::bookTime *ui;
     bookingRegister* bookings;

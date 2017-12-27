@@ -39,9 +39,16 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="removeBooking">
         <property name="text">
-         <string>PushButton</string>
+         <string>4. Ta bort bokning</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="logOut">
+        <property name="text">
+         <string>Logga ut</string>
         </property>
        </widget>
       </item>

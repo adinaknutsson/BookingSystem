@@ -15,6 +15,13 @@ public:
     bool login(int personNr, std::string password);
     void setActivUser(int personNr);
     int getActiveUser() const;
+    int getCounter() const;
+
+    std::string getNameAtIndex(int index) const;
+    int getPersonNrAtIndex(int index) const;
+    std::string getPasswordAtIndex(int index) const;
+    std::string getEmailAtIndex(int index) const;
+    std::string getAddressAtIndex(int index) const;
 
     void setName(std::string newName);
     void setEmail(std::string newEmail);

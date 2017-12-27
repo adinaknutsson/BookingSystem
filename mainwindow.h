@@ -10,6 +10,7 @@
 #include "haircut.h"
 #include "colortreatment.h"
 #include "changeinformation.h"
+#include "removeBooking.h"
 
 
 namespace Ui {
@@ -32,6 +33,10 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_removeBooking_clicked();
+
+    void on_logOut_clicked();
+
 private:
     Ui::MainWindow *ui;
     Treatment** treatments;
@@ -47,6 +52,7 @@ private:
     Login* loginWindow;
     bookTime* bookWindow;
     changeInformation* informationWindow;
+    removeBooking* removeWindow;
 
 };
 

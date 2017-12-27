@@ -71,3 +71,13 @@ std::string Customers::getPassword() const
     return password;
 }
 
+std::string Customers::getEmail() const
+{
+    return email;
+}
+
+std::string Customers::getAddress() const
+{
+    return address;
+}
+

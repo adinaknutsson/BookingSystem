@@ -102,6 +102,36 @@ int CustomerRegister::getActiveUser() const
     return activUserPersonNr;
 }
 
+int CustomerRegister::getCounter() const
+{
+    return counter;
+}
+
+std::string CustomerRegister::getNameAtIndex(int index) const
+{
+    return CustomersArray[index]->getName();
+}
+
+int CustomerRegister::getPersonNrAtIndex(int index) const
+{
+    return CustomersArray[index]->getPersonNr();
+}
+
+std::string CustomerRegister::getPasswordAtIndex(int index) const
+{
+    return CustomersArray[index]->getPassword();
+}
+
+std::string CustomerRegister::getEmailAtIndex(int index) const
+{
+    return CustomersArray[index]->getEmail();
+}
+
+std::string CustomerRegister::getAddressAtIndex(int index) const
+{
+    return CustomersArray[index]->getAddress();
+}
+
 void CustomerRegister::setName(std::string newName)
 {
     int index = findCustomer(activUserPersonNr);

@@ -3,6 +3,7 @@
 #include "login.h"
 #include "QMessageBox"
 
+//KOLLA PÅ ACTIVUSER, FÅR UPP ALLAS BOKNINGAR.
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -29,10 +30,9 @@ MainWindow::MainWindow(QWidget *parent) :
     treatments[counterTreatments++] = new ColorTreatment (1200, 9, "Slingor kort hår", "Ljust");
 
     this->hide();
-    loginWindow = new Login(&customers, this);
+    loginWindow = new Login(&customers,&bookings, this);
     loginWindow->setModal(true);
     loginWindow->show();
-
 }
 
 MainWindow::~MainWindow()
@@ -65,7 +65,7 @@ void MainWindow::on_pushButton_2_clicked()
     std::string booking ="";
     for(int i=0; i < count; i++)
     {
-        if(personNrActive ==bookings.getPersonNr(i));
+        if(personNrActive == bookings.getPersonNr(i));
         {
             booking = booking + bookings.toString(i);
             int treatmentID = bookings.getTreatmentIDAtIndex(i);
@@ -102,4 +102,17 @@ void MainWindow::on_pushButton_3_clicked()
     informationWindow = new changeInformation(&customers,personNrActive, this);
     informationWindow->show();
     hide();
+}
+
+void MainWindow::on_removeBooking_clicked()
+{
+    removeWindow = new removeBooking(&bookings, this);
+    removeWindow->show();
+    hide();
+}
+
+void MainWindow::on_logOut_clicked()
+{
+    loginWindow->show();
+    personNrActive =0;
 }

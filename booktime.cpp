@@ -62,3 +62,9 @@ void bookTime::on_time_clicked()
     ui->textBrowser->setText(time);
 
 }
+
+void bookTime::on_end_clicked()
+{
+    close();
+    parentWidget()->show();
+}

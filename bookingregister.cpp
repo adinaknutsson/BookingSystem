@@ -99,6 +99,35 @@ std::string bookingRegister::toString(int index)
     return bookings[index]->ToString();
 }
 
+int bookingRegister::bookingToRemove(int date, int time)
+{
+    int index = -1;
+    for (int i=0; i < counter; i++)
+    {
+        if (date == bookings[i]->getDate() && time == bookings[i]->getTime())
+        {
+            index =i;
+            i = counter;
+        }
+    }
+    return index;
+}
+
+void bookingRegister::removeBooking(int index)
+{
+    if (counter ==1)
+        {
+           delete bookings[index];
+           counter--;
+        }
+    else
+        {
+            bookings[index] = bookings[counter];
+            delete bookings[counter];
+            counter--;
+        }
+}
+
 int bookingRegister::getCounter()
 {
     return counter;
@@ -117,6 +146,16 @@ int bookingRegister::getTreatmentIDAtIndex(int index)
 int bookingRegister::getPersonNr(int index)
 {
     return bookings[index]->getPersonNr();
+}
+
+int bookingRegister::getDateAtIndex(int index) const
+{
+    return bookings[index]->getDate();
+}
+
+int bookingRegister::getTimeAtIndex(int index) const
+{
+    return bookings[index]->getTime();
 }
 
 void bookingRegister::Expand()

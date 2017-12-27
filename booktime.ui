@@ -92,6 +92,16 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="end">
+       <property name="text">
+        <string>Avbryt</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+     </item>
     </layout>
    </item>
   </layout>

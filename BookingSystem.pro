@@ -39,7 +39,8 @@ SOURCES += \
     newuser.cpp \
     loginuser.cpp \
     booktime.cpp \
-    changeinformation.cpp
+    changeinformation.cpp \
+    removeBooking.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -56,7 +57,8 @@ HEADERS += \
     newuser.h \
     loginuser.h \
     booktime.h \
-    changeinformation.h
+    changeinformation.h \
+    removeBooking.h
 
 FORMS += \
         mainwindow.ui \
@@ -64,4 +66,5 @@ FORMS += \
     newuser.ui \
     loginuser.ui \
     booktime.ui \
-    changeinformation.ui
+    changeinformation.ui \
+    removeBooking.ui

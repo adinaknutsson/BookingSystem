@@ -18,6 +18,8 @@ public:
     std::string getName() const;
     int getPersonNr() const;
     std::string getPassword() const;
+    std::string getEmail() const;
+    std::string getAddress() const;
     //Fler getters efter behov...
 private:
     int personNr;
