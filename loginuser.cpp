@@ -36,6 +36,4 @@ void loginUser::on_login_clicked()
         QMessageBox::warning(this, "Inloggning", "Fel användarnamn eller lösenord");
     }
 
-    //else inloggningen fungerade ej!...
-
 }

@@ -19,6 +19,8 @@ public:
 private slots:
     void on_login_clicked();
 
+    void on_stop_clicked();
+
 private:
     Ui::loginUser *ui;
     CustomerRegister* customers;

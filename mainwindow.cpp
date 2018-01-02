@@ -63,9 +63,10 @@ void MainWindow::on_pushButton_2_clicked()
 {
     int count = bookings.getCounter();
     std::string booking ="";
+    //personNrActive = customers.getActiveUser();
     for(int i=0; i < count; i++)
     {
-        if(personNrActive == bookings.getPersonNr(i));
+        if (customers.getActiveUser() == bookings.getPersonNr(i))
         {
             booking = booking + bookings.toString(i);
             int treatmentID = bookings.getTreatmentIDAtIndex(i);
