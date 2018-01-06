@@ -8,6 +8,7 @@ loginUser::loginUser(CustomerRegister* customers, QWidget *parent) :
     ui(new Ui::loginUser)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Logga in");
     this->customers = customers;
     setWindowFlags(Qt::FramelessWindowHint);
     setWindowFlags(Qt::WindowTitleHint);

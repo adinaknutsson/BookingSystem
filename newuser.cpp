@@ -8,7 +8,9 @@ newUser::newUser(CustomerRegister* customers, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::newUser)
 {
+
     ui->setupUi(this);
+    this->setWindowTitle("Ny användare");
     this->customers = customers;
 }
 

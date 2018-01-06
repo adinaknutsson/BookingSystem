@@ -16,7 +16,6 @@ public:
 
 private:
     int price;
-    //int timeOfTreatment;
     int treatmentID;
     std::string name;
     virtual std::string ToStringSpecific() const=0;

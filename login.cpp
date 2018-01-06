@@ -10,9 +10,11 @@ Login::Login(CustomerRegister* customers, bookingRegister *bookings, QWidget *pa
     QDialog(parent),
     ui(new Ui::Login)
 {
+
     this->customers = customers;
     this->bookings = bookings;
     ui->setupUi(this);
+    this->setWindowTitle("Logga in");
 }
 
 Login::~Login()

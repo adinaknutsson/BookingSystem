@@ -7,6 +7,7 @@ changeInformation::changeInformation(CustomerRegister *customers, int personNrac
     ui(new Ui::changeInformation)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Ändra användaruppgifter");
     this->customers = customers;
     activ = customers->getActiveUser();
 }

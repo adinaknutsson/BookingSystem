@@ -2,9 +2,10 @@
 #include "ui_mainwindow.h"
 #include "login.h"
 #include "QMessageBox"
+#include <QFile>
+#include <QTextStream>
 
-//KOLLA PÅ ACTIVUSER, FÅR UPP ALLAS BOKNINGAR.
-
+//KOLLA TA BORT BOKNINGEN! KOLLAR ALDRIG PERSONNR.
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow), customers(), bookings(), hairdressers()
@@ -28,6 +29,51 @@ MainWindow::MainWindow(QWidget *parent) :
     treatments[counterTreatments++] = new ColorTreatment(1200, 7, "Slingor kort hår", "Mörkt");
     treatments[counterTreatments++] = new ColorTreatment (1500, 8, "Slingor långt hår", "Ljust");
     treatments[counterTreatments++] = new ColorTreatment (1200, 9, "Slingor kort hår", "Ljust");
+
+    QFile readFileCustomers("customersFile.txt");
+    QFile readFileBookings("bookingFile.txt");
+    if(readFileCustomers.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream in(&readFileCustomers);
+        QString nrOfCustomers = in.readLine();
+        int counterCustomers = nrOfCustomers.toInt();
+        for (int i=0; i < counterCustomers; i++)
+        {
+            QString personNr = in.readLine();
+            int personNr2 = personNr.toInt();
+            QString name = in.readLine();
+            std::string name2 = name.toStdString();
+            QString email = in.readLine();
+            std::string email2 = email.toStdString();
+            QString address = in.readLine();
+            std::string address2 = address.toStdString();
+
+            QString password = in.readLine();
+            std::string password2 = password.toStdString();
+            customers.addCustomer(personNr2, name2, email2, address2, password2);
+        }
+    }
+
+    if (readFileBookings.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream in2(&readFileBookings);
+        QString nrOfBookings = in2.readLine();
+        int counterBookings= nrOfBookings.toInt();
+        for (int i=0; i < counterBookings; i++)
+        {
+            QString hairdresserID = in2.readLine();
+            int hairdresserID2 = hairdresserID.toInt();
+            QString treatmentID = in2.readLine();
+            int treatmentID2 = treatmentID.toInt();
+            QString date = in2.readLine();
+            int date2 = date.toInt();
+            QString time = in2.readLine();
+            int time2 = time.toInt();
+            QString personNr = in2.readLine();
+            int personNr2 = personNr.toInt();
+            bookings.addBooking(hairdresserID2, treatmentID2, date2,time2,personNr2);
+        }
+    }
 
     this->hide();
     loginWindow = new Login(&customers,&bookings, this);
@@ -107,7 +153,7 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_removeBooking_clicked()
 {
-    removeWindow = new removeBooking(&bookings, this);
+    removeWindow = new removeBooking(&bookings, personNrActive,  this);
     removeWindow->show();
     hide();
 }

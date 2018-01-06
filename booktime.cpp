@@ -7,8 +7,10 @@
 bookTime::bookTime(bookingRegister* bookings, hairdresserRegister* hairdressers, Treatment** treatments, int activUser,  QWidget *parent) :
     QDialog(parent),
     ui(new Ui::bookTime)
+
 {
     ui->setupUi(this);
+    this->setWindowTitle("Boka tid");
     this->hairdressers = hairdressers;
     this->bookings = bookings;
     this->treatments = treatments;

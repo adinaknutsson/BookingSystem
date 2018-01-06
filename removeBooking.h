@@ -13,7 +13,7 @@ class removeBooking : public QDialog
     Q_OBJECT
 
 public:
-    explicit removeBooking(bookingRegister* bookings, QWidget *parent = 0);
+    explicit removeBooking(bookingRegister* bookings, int personNr, QWidget *parent = 0);
     ~removeBooking();
 
 private slots:
@@ -24,6 +24,7 @@ private slots:
 private:
     Ui::removeBooking *ui;
     bookingRegister* bookings;
+    int activUser;
 };
 
 #endif // DIALOG_H

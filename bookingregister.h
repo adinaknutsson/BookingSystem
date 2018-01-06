@@ -12,12 +12,9 @@ public:
     bool checkTime(int hairdresserID, int date, int time);
     std::string freeTimesToString(int date, int hairdresserID);
     std::string toString(int index);
-    int bookingToRemove(int date, int time);
+    int bookingToRemove(int date, int time, int personNr);
     void removeBooking(int index);
 
-
-
-    //Get funktioner för allt?
     int getCounter();
     int gethairdresserIDAtIndex(int index);
     int getTreatmentIDAtIndex(int index);

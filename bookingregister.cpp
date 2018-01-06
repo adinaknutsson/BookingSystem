@@ -99,12 +99,13 @@ std::string bookingRegister::toString(int index)
     return bookings[index]->ToString();
 }
 
-int bookingRegister::bookingToRemove(int date, int time)
+int bookingRegister::bookingToRemove(int date, int time, int personNr)
 {
     int index = -1;
     for (int i=0; i < counter; i++)
     {
-        if (date == bookings[i]->getDate() && time == bookings[i]->getTime())
+        if (date == bookings[i]->getDate() && time == bookings[i]->getTime()
+                && bookings[i]->getPersonNr() == personNr)
         {
             index =i;
             i = counter;
